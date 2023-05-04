@@ -2,10 +2,15 @@ package testing.theory.kulikov_322_26_03_2023.section_1.testing_and_testers;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class YouNeedToKnowTest {
     YouNeedToKnow youNeedToKnow = new YouNeedToKnow();
+
+    public YouNeedToKnowTest() throws IOException {
+    }
+
     @Test
     public void printOutput() {
         System.out.println(youNeedToKnow.skillLevelArrayList().size());
