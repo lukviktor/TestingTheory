@@ -1,7 +1,6 @@
 package testing.theory.kulikov_322_26_03_2023.main_theme;
 
 import io.qameta.allure.Step;
-import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
