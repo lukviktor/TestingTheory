@@ -1,26 +1,25 @@
-package testing.theory.kulikov_322_26_03_2023.main_theme;
+package testing.theory.kulikov_322_26_03_2023.testing_Life_cycle;
 
 import io.qameta.allure.Step;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import static testing.theory.kulikov_322_26_03_2023.main_theme.ConstantDataLifeCycle.*;
+import static testing.theory.kulikov_322_26_03_2023.testing_Life_cycle.ConstantDataLifeCycle.*;
 
 public class TestingLifecycle {
     /**
      * Жизненный цикл тестирования
      */
-    HashMap<String, ArrayList<String>> testingLifecycle = new HashMap<>(); // Жизненный цикл тестирования
+    HashMap<String, String> testingLifecycle = new HashMap<>(); // Жизненный цикл тестирования
     ArrayList<String> stage = new ArrayList<>(); // Стадия
     ArrayList<String> stageDescription = new ArrayList<>(); // Названия стадии
     ArrayList<String> stageExplanation = new ArrayList<>(); // Описание стадии
-    ArrayList<String> stageDescriptionStageExplanation = new ArrayList<>(); // Названия стадии и Описание стадии
 
 
     @Step("Создаем ArrayList стадии Жизненного цикла тестирования")
     public ArrayList<String> stage() { // Стадия
-        for (int i = 0; i < 8; i++)
+        for (int i = 1; i <= 8; i++)
             stage.add("Стадия " + i);
         return stage;
     }
@@ -52,17 +51,13 @@ public class TestingLifecycle {
     }
 
     @Step("HashMap Жизненный цикл тестирования")
-    public HashMap<String, ArrayList<String>> testingLifecycle() {
+    public HashMap<String, String> testingLifecycle() {
         stage();
         stageDescription();
         stageExplanation();
-
         for (int i = 0; i < stage.size(); i++) {
-            stageDescriptionStageExplanation.add(stageDescription.get(i));
-            stageDescriptionStageExplanation.add(stageExplanation.get(i));
-            testingLifecycle.put(stage.get(i), stageDescriptionStageExplanation);
+            testingLifecycle.put(stage.get(i), stageDescription.get(i) + ": " + stageExplanation.get(i));
         }
-
         return testingLifecycle;
     }
 }
