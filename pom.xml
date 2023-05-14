@@ -43,12 +43,6 @@
             <version>5.9.2</version>
             <scope>compile</scope>
         </dependency>
-        <!-- Apache POI и JExcel API для работы с электронными таблицами Excel -->
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi</artifactId>
-            <version>5.2.2</version>
-        </dependency>
     </dependencies>
     <build>
         <plugins>
