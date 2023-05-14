@@ -9,6 +9,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import testing.theory.kulikov_322_26_03_2023.basic_principles_testing.PrinciplesTestingBasic;
 
 import java.util.Random;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -56,6 +57,7 @@ public class PrinciplesTestingBasicTest {
     public void isContainsStageDescription(String principlesTestingDescription, boolean result) { //тестовый метод
         assertEquals(result, principlesTestingBasic.principlesTestingDescription().contains(principlesTestingDescription)); //тело метода
     }
+
     static Stream<Arguments> isPrinciplesTestingDescriptionData() {
         return Stream.of(
                 arguments(PRINCIPLES_TESTING_DESCRIPTION_1, true),
@@ -74,6 +76,7 @@ public class PrinciplesTestingBasicTest {
     public void isContainsKeyTestingLifecycle(String keyBasicPrinciplesTesting, boolean result) { //тестовый метод
         assertEquals(result, principlesTestingBasic.basicPrinciplesTesting().containsKey(keyBasicPrinciplesTesting)); //тело метода
     }
+
     static Stream<Arguments> KeyTestingLifecycleData() {
         return Stream.of(
                 arguments("Принцип тестирования 1", true),
@@ -85,5 +88,19 @@ public class PrinciplesTestingBasicTest {
                 arguments("Принцип тестирования 7", true),
                 arguments("Принцип тестирования 8", false)
         );
+    }
+
+    @DisplayName("HashMap Основные принципы тестирования")
+    @Test
+    public void beginnerTesterCheatSheetTest() {
+
+        IntStream.range(0, principlesTestingBasic.principle.size()).forEach(i ->
+                Assertions.assertEquals(principlesTestingBasic.beginnerTesterCheatSheet()
+                        .get(principlesTestingBasic.principle.get(i)), principlesTestingBasic.explanation.get(i)));
+
+        IntStream.range(0, principlesTestingBasic.principle.size()).forEach(i -> {
+            System.out.println(principlesTestingBasic.principle.get(i));
+            System.out.println(principlesTestingBasic.beginnerTesterCheatSheet().get(principlesTestingBasic.principle.get(i)) + "\n");
+        });
     }
 }

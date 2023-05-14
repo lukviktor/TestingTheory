@@ -3,7 +3,9 @@ package testing.theory.kulikov_322_26_03_2023.basic_principles_testing;
 import io.qameta.allure.Step;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 import static testing.theory.kulikov_322_26_03_2023.basic_principles_testing.ConstantDatsPrinciplesTesting.*;
 
@@ -56,5 +58,34 @@ public class PrinciplesTestingBasic {
             basicPrinciplesTesting.put(principlesNumber.get(i), principlesTesting.get(i) + ": " + principlesTestingDescription.get(i));
         }
         return basicPrinciplesTesting;
+    }
+
+
+    public List<String> principle = new ArrayList<>(Arrays.asList(
+            principle1,
+            principle2,
+            principle3,
+            principle4,
+            principle5,
+            principle6,
+            principle7
+    ));
+    public List<String> explanation = new ArrayList<>(Arrays.asList(
+            explanation1,
+            explanation2,
+            explanation3,
+            explanation4,
+            explanation5,
+            explanation6,
+            explanation7
+    ));
+    @Step("шпаргалка начинающего тестировщика")
+    public HashMap<String, String> beginnerTesterCheatSheet() {
+        HashMap<String, String> testingPrinciples = new HashMap<>();
+        for (int i = 0; i < 7; i++) {
+
+            testingPrinciples.put(principle.get(i), explanation.get(i));
+        }
+        return testingPrinciples;
     }
 }
