@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import testing.theory.kulikov_322_26_03_2023.basic_principles_testing.BasicPrinciplesTesting;
+import testing.theory.kulikov_322_26_03_2023.basic_principles_testing.PrinciplesTestingBasic;
 
 import java.util.Random;
 import java.util.stream.Stream;
@@ -15,27 +15,27 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 import static testing.theory.kulikov_322_26_03_2023.basic_principles_testing.ConstantDatsPrinciplesTesting.*;
 
-public class BasicPrinciplesTestingTest {
-    BasicPrinciplesTesting basicPrinciplesTesting = new BasicPrinciplesTesting();
+public class PrinciplesTestingBasicTest {
+    PrinciplesTestingBasic principlesTestingBasic = new PrinciplesTestingBasic();
 
     @DisplayName("ArrayList Основные принципы тестирования номер")
     @Test
     public void stageTest() {
-        System.out.println(basicPrinciplesTesting.principlesNumber());
+        System.out.println(principlesTestingBasic.principlesNumber());
         int min = 1;
         int max = 7;
         int diff = max - min;
         Random random = new Random();
         int stageNum = random.nextInt(diff + 1) + min;
         System.out.println(stageNum);
-        Assertions.assertTrue(basicPrinciplesTesting.principlesNumber().contains("Принцип тестирования " + stageNum));
+        Assertions.assertTrue(principlesTestingBasic.principlesNumber().contains("Принцип тестирования " + stageNum));
     }
 
     @DisplayName("ArrayList Названия принципов тестирования")
     @ParameterizedTest
     @MethodSource("isPrinciplesTestingData") //указали, откуда взять данные
     public void isContainsStageExplanation(String principlesTesting, boolean result) { //тестовый метод
-        assertEquals(result, basicPrinciplesTesting.principlesTesting().contains(principlesTesting)); //тело метода
+        assertEquals(result, principlesTestingBasic.principlesTesting().contains(principlesTesting)); //тело метода
     }
 
     static Stream<Arguments> isPrinciplesTestingData() {
@@ -54,7 +54,7 @@ public class BasicPrinciplesTestingTest {
     @ParameterizedTest
     @MethodSource("isPrinciplesTestingDescriptionData") //указали, откуда взять данные
     public void isContainsStageDescription(String principlesTestingDescription, boolean result) { //тестовый метод
-        assertEquals(result, basicPrinciplesTesting.principlesTestingDescription().contains(principlesTestingDescription)); //тело метода
+        assertEquals(result, principlesTestingBasic.principlesTestingDescription().contains(principlesTestingDescription)); //тело метода
     }
     static Stream<Arguments> isPrinciplesTestingDescriptionData() {
         return Stream.of(
@@ -72,7 +72,7 @@ public class BasicPrinciplesTestingTest {
     @ParameterizedTest
     @MethodSource("KeyTestingLifecycleData") //указали, откуда взять данные
     public void isContainsKeyTestingLifecycle(String keyBasicPrinciplesTesting, boolean result) { //тестовый метод
-        assertEquals(result, basicPrinciplesTesting.basicPrinciplesTesting().containsKey(keyBasicPrinciplesTesting)); //тело метода
+        assertEquals(result, principlesTestingBasic.basicPrinciplesTesting().containsKey(keyBasicPrinciplesTesting)); //тело метода
     }
     static Stream<Arguments> KeyTestingLifecycleData() {
         return Stream.of(

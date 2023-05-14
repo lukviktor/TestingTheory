@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 import static testing.theory.kulikov_322_26_03_2023.basic_principles_testing.ConstantDatsPrinciplesTesting.*;
 
-public class BasicPrinciplesTesting {
+public class PrinciplesTestingBasic {
     /**
      * Основные принципы тестирования
      */
