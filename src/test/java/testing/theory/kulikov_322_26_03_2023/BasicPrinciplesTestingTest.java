@@ -1,6 +1,6 @@
 package testing.theory.kulikov_322_26_03_2023;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -28,7 +28,7 @@ public class BasicPrinciplesTestingTest {
         Random random = new Random();
         int stageNum = random.nextInt(diff + 1) + min;
         System.out.println(stageNum);
-        Assert.assertTrue(basicPrinciplesTesting.principlesNumber().contains("Принцип тестирования " + stageNum));
+        Assertions.assertTrue(basicPrinciplesTesting.principlesNumber().contains("Принцип тестирования " + stageNum));
     }
 
     @DisplayName("ArrayList Названия принципов тестирования")

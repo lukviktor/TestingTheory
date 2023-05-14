@@ -1,6 +1,6 @@
 package testing.theory.kulikov_322_26_03_2023;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -27,7 +27,7 @@ public class TestingLifecycleTest {
         int diff = max - min;
         Random random = new Random();
         int stageNum = random.nextInt(diff + 1) + min;
-        Assert.assertTrue(testingLifecycle.stage().contains("Стадия " + stageNum));
+        Assertions.assertTrue(testingLifecycle.stage().contains("Стадия " + stageNum));
     }
 
     @DisplayName("ArrayList описание стадии Жизненного цикла тестирования")
@@ -88,12 +88,5 @@ public class TestingLifecycleTest {
                 arguments("Стадия 7", true),
                 arguments("Стадия 8", true)
         );
-    }
-
-    @Test
-    public void testingLifecycleTest() {
-        System.out.println(testingLifecycle.testingLifecycle());
-//        System.out.println(testingLifecycle.testingLifecycle().containsKey(""));
-//        System.out.println(testingLifecycle.testingLifecycle().containsValue(""));
     }
 }
