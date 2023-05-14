@@ -12,12 +12,11 @@ public class Terminology {
     //Тестирование программного обеспечения
     @Step("Тестирование программного обеспечения")
     public List<String> softwareTesting() {
-        List<String> softwareTesting = new ArrayList<>(Arrays.asList(
+        return new ArrayList<>(Arrays.asList(
                 SOFTWARE_TESTING_1,
                 SOFTWARE_TESTING_2,
                 SOFTWARE_TESTING_3
         ));
-        return softwareTesting;
     }
 
     @Step("Вывод на печать Тестирование программного обеспечения")
