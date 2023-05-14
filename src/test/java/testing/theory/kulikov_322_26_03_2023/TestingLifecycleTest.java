@@ -18,15 +18,6 @@ import static testing.theory.kulikov_322_26_03_2023.testing_Life_cycle.ConstantD
 public class TestingLifecycleTest {
     TestingLifecycle testingLifecycle = new TestingLifecycle();
 
-    @Test
-    public void test() {
-        System.out.println(testingLifecycle.stage());
-        System.out.println(testingLifecycle.stageExplanation());
-        System.out.println(testingLifecycle.stageDescription());
-        System.out.println();
-        System.out.println(testingLifecycle.testingLifecycle());
-    }
-
     @DisplayName("ArrayList стадии Жизненного цикла тестирования")
     @Test
     public void stageTest() {
